@@ -3,24 +3,39 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#1A1A2E">
+    android:background="?attr/colorSurface">
 
+    <!-- Header IPN/ESCOM -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:padding="12dp"
         android:gravity="center_vertical"
-        android:background="#16213E">
+        android:background="@color/escom_blue">
 
-        <TextView
+        <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="BlueTube"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:textColor="#FFFFFF"/>
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="BlueTube · IPN ESCOM"
+                android:textSize="10sp"
+                android:textColor="@color/ipn_gold"
+                android:letterSpacing="0.15"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="📱 Cliente"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"/>
+        </LinearLayout>
 
         <Button
             android:id="@+id/btnConectar"
@@ -28,27 +43,30 @@
             android:layout_height="36dp"
             android:text="Conectar"
             android:textSize="12sp"
-            android:backgroundTint="#4ECDC4"
-            android:textColor="#1A1A2E"/>
+            android:backgroundTint="@color/ipn_gold"
+            android:textColor="@color/escom_blue"
+            style="@style/Widget.MaterialComponents.Button"/>
     </LinearLayout>
 
+    <!-- Estado conexión -->
     <TextView
         android:id="@+id/tvConexion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Sin conexion al servidor"
         android:textSize="11sp"
-        android:textColor="#FF6B6B"
+        android:textColor="@color/disconnected"
         android:padding="8dp"
         android:gravity="center"
-        android:background="#0F0F1A"/>
+        android:background="@color/ipn_guinda_dark"/>
 
+    <!-- Barra de búsqueda -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:padding="10dp"
-        android:background="#16213E">
+        android:background="@color/ipn_guinda">
 
         <EditText
             android:id="@+id/etBusqueda"
@@ -56,9 +74,9 @@
             android:layout_height="44dp"
             android:layout_weight="1"
             android:hint="Buscar videos de YouTube..."
-            android:textColor="#FFFFFF"
-            android:textColorHint="#666666"
-            android:background="#0F3460"
+            android:textColor="@color/white"
+            android:textColorHint="@color/ipn_gold_light"
+            android:background="@color/ipn_guinda_dark"
             android:paddingHorizontal="12dp"
             android:imeOptions="actionSearch"
             android:inputType="text"
@@ -71,8 +89,9 @@
             android:layout_height="44dp"
             android:text="Go"
             android:textSize="12sp"
-            android:backgroundTint="#4ECDC4"
-            android:textColor="#1A1A2E"/>
+            android:backgroundTint="@color/ipn_gold"
+            android:textColor="@color/ipn_guinda_dark"
+            style="@style/Widget.MaterialComponents.Button"/>
     </LinearLayout>
 
     <ProgressBar
@@ -81,113 +100,126 @@
         android:layout_height="4dp"
         style="?android:attr/progressBarStyleHorizontal"
         android:indeterminate="true"
-        android:progressTint="#4ECDC4"
+        android:progressTint="@color/ipn_gold"
         android:visibility="gone"/>
 
-    <TextView
-        android:id="@+id/tvEstadoDescarga"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text=""
-        android:textSize="11sp"
-        android:textColor="#FFD700"
-        android:padding="8dp"
-        android:gravity="center"
-        android:background="#0F0F1A"
-        android:visibility="gone"/>
-
+    <!-- Reproductor -->
     <LinearLayout
         android:id="@+id/layoutReproductor"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:background="#000000"
+        android:background="@color/bg_dark"
         android:visibility="gone">
 
+        <WebView
+            android:id="@+id/webViewVideo"
+            android:layout_width="match_parent"
+            android:layout_height="220dp"/>
+
+        <!-- Título del video -->
         <TextView
             android:id="@+id/tvTituloActual"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text=""
-            android:textColor="#FFFFFF"
-            android:textSize="13sp"
-            android:padding="12dp"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:padding="8dp"
             android:gravity="center"
             android:maxLines="2"
             android:ellipsize="end"
-            android:background="#16213E"/>
+            android:background="@color/ipn_guinda_dark"/>
 
+        <!-- Barra de progreso -->
         <SeekBar
             android:id="@+id/seekBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingHorizontal="12dp"
-            android:progressTint="#4ECDC4"
-            android:thumbTint="#4ECDC4"/>
+            android:progressTint="@color/ipn_gold"
+            android:thumbTint="@color/ipn_gold"/>
 
+        <!-- Controles de reproducción -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="center"
-            android:padding="10dp">
+            android:padding="8dp">
 
             <Button
                 android:id="@+id/btnRetroceder"
                 android:layout_width="wrap_content"
-                android:layout_height="44dp"
+                android:layout_height="40dp"
                 android:text="-10s"
                 android:textSize="12sp"
-                android:backgroundTint="#16213E"
-                android:textColor="#CCCCCC"
-                android:layout_marginEnd="12dp"/>
+                android:backgroundTint="@color/ipn_guinda_dark"
+                android:textColor="@color/ipn_gold"
+                android:layout_marginEnd="8dp"
+                style="@style/Widget.MaterialComponents.Button"/>
 
             <Button
                 android:id="@+id/btnPlayPause"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:text="||"
-                android:textSize="18sp"
-                android:backgroundTint="#4ECDC4"
-                android:textColor="#1A1A2E"
-                android:layout_marginEnd="12dp"/>
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:text="▐▐"
+                android:textSize="16sp"
+                android:backgroundTint="@color/ipn_guinda"
+                android:textColor="@color/ipn_gold"
+                android:layout_marginEnd="8dp"
+                style="@style/Widget.MaterialComponents.Button"/>
 
             <Button
                 android:id="@+id/btnAdelantar"
                 android:layout_width="wrap_content"
-                android:layout_height="44dp"
+                android:layout_height="40dp"
                 android:text="+10s"
                 android:textSize="12sp"
-                android:backgroundTint="#16213E"
-                android:textColor="#CCCCCC"/>
+                android:backgroundTint="@color/ipn_guinda_dark"
+                android:textColor="@color/ipn_gold"
+                android:layout_marginEnd="16dp"
+                style="@style/Widget.MaterialComponents.Button"/>
+
+            <Button
+                android:id="@+id/btnFavorito"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="⭐ Fav"
+                android:textSize="12sp"
+                android:backgroundTint="@color/escom_blue"
+                android:textColor="@color/ipn_gold"
+                style="@style/Widget.MaterialComponents.Button"/>
         </LinearLayout>
 
+        <!-- Opciones adicionales -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:padding="8dp"
-            android:gravity="center_vertical">
+            android:gravity="center_vertical"
+            android:background="@color/ipn_guinda_dark">
 
             <CheckBox
                 android:id="@+id/cbModoPrivado"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Modo privado"
-                android:textColor="#CCCCCC"
+                android:text="🔒 Privado"
+                android:textColor="@color/white"
                 android:textSize="12sp"
-                android:buttonTint="#4ECDC4"/>
+                android:buttonTint="@color/ipn_gold"/>
 
             <CheckBox
                 android:id="@+id/cbBajoConsumo"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Bajo consumo"
-                android:textColor="#CCCCCC"
+                android:text="🔋 Bajo consumo"
+                android:textColor="@color/white"
                 android:textSize="12sp"
-                android:buttonTint="#4ECDC4"/>
+                android:buttonTint="@color/ipn_gold"/>
 
             <Button
                 android:id="@+id/btnHistorial"
@@ -195,8 +227,9 @@
                 android:layout_height="32dp"
                 android:text="Historial"
                 android:textSize="11sp"
-                android:backgroundTint="#16213E"
-                android:textColor="#AAAAAA"/>
+                android:backgroundTint="@color/escom_blue"
+                android:textColor="@color/ipn_gold"
+                style="@style/Widget.MaterialComponents.Button"/>
         </LinearLayout>
     </LinearLayout>
 

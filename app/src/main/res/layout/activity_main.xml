@@ -5,68 +5,119 @@
     android:orientation="vertical"
     android:gravity="center"
     android:padding="32dp"
-    android:background="#1A1A2E">
+    android:background="?attr/colorSurface">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <!-- Logo IPN / ESCOM header -->
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="BlueTube"
-        android:textSize="36sp"
-        android:textStyle="bold"
-        android:textColor="#FFFFFF"
-        android:layout_marginBottom="8dp"/>
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="16dp"
+        android:background="@color/ipn_guinda"
+        android:layout_marginBottom="32dp">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="YouTube via Bluetooth"
-        android:textSize="14sp"
-        android:textColor="#888888"
-        android:layout_marginBottom="56dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="IPN · ESCOM"
+            android:textSize="12sp"
+            android:textColor="@color/ipn_gold"
+            android:letterSpacing="0.3"
+            android:layout_marginBottom="4dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="📺 BlueTube"
+            android:textSize="36sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:layout_marginBottom="4dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="YouTube via Bluetooth"
+            android:textSize="13sp"
+            android:textColor="@color/ipn_gold_light"/>
+    </LinearLayout>
+
+    <!-- Boton modo noche -->
+    <Button
+        android:id="@+id/btnModoNoche"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="🌙 Modo Noche"
+        android:textSize="13sp"
+        android:backgroundTint="@color/bg_dark_surface"
+        android:textColor="@color/ipn_gold"
+        android:layout_marginBottom="24dp"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Selecciona el modo de este dispositivo:"
         android:textSize="13sp"
-        android:textColor="#CCCCCC"
-        android:layout_marginBottom="24dp"/>
+        android:textColor="?attr/colorOnSurface"
+        android:layout_marginBottom="16dp"/>
 
-    <Button
-        android:id="@+id/btnServidor"
-        android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:text="MODO SERVIDOR"
-        android:textSize="15sp"
-        android:backgroundTint="#4ECDC4"
-        android:textColor="#1A1A2E"
-        android:layout_marginBottom="8dp"/>
-
-    <TextView
+    <!-- Servidor -->
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Este dispositivo tiene Internet. Recibe peticiones del cliente via Bluetooth."
-        android:textSize="11sp"
-        android:textColor="#666666"
-        android:gravity="center"
-        android:layout_marginBottom="32dp"/>
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:background="@color/ipn_guinda"
+        android:layout_marginBottom="12dp">
 
-    <Button
-        android:id="@+id/btnCliente"
-        android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:text="MODO CLIENTE"
-        android:textSize="15sp"
-        android:backgroundTint="#16213E"
-        android:textColor="#4ECDC4"
-        android:layout_marginBottom="8dp"/>
+        <Button
+            android:id="@+id/btnServidor"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:text="📡  MODO SERVIDOR"
+            android:textSize="15sp"
+            android:backgroundTint="@color/ipn_gold"
+            android:textColor="@color/ipn_guinda_dark"
+            style="@style/Widget.MaterialComponents.Button"/>
 
-    <TextView
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Dispositivo A — Tiene Internet. Busca videos y los manda al cliente."
+            android:textSize="11sp"
+            android:textColor="@color/ipn_gold_light"
+            android:gravity="center"
+            android:layout_marginTop="8dp"/>
+    </LinearLayout>
+
+    <!-- Cliente -->
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Este dispositivo NO tiene Internet. Busca y reproduce videos a traves del servidor."
-        android:textSize="11sp"
-        android:textColor="#666666"
-        android:gravity="center"/>
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:background="@color/escom_blue">
+
+        <Button
+            android:id="@+id/btnCliente"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:text="📱  MODO CLIENTE"
+            android:textSize="15sp"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/escom_blue"
+            style="@style/Widget.MaterialComponents.Button"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Dispositivo B — Sin Internet. Recibe videos del servidor via Bluetooth."
+            android:textSize="11sp"
+            android:textColor="@color/ipn_gold_light"
+            android:gravity="center"
+            android:layout_marginTop="8dp"/>
+    </LinearLayout>
 
 </LinearLayout>

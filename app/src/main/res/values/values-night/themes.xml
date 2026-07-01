@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Base.Theme.Escomextra" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="colorPrimary">@color/ipn_guinda_light</item>
+        <item name="colorPrimaryVariant">@color/ipn_guinda</item>
+        <item name="colorSecondary">@color/ipn_gold</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="android:statusBarColor">@color/ipn_guinda_dark</item>
+    </style>
+
+    <style name="Theme.Escomextra" parent="Base.Theme.Escomextra"/>
+</resources>
