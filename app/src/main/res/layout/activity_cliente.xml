@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#1A1A2E">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="12dp"
+        android:gravity="center_vertical"
+        android:background="#16213E">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="BlueTube"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"/>
+
+        <Button
+            android:id="@+id/btnConectar"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:text="Conectar"
+            android:textSize="12sp"
+            android:backgroundTint="#4ECDC4"
+            android:textColor="#1A1A2E"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvConexion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sin conexion al servidor"
+        android:textSize="11sp"
+        android:textColor="#FF6B6B"
+        android:padding="8dp"
+        android:gravity="center"
+        android:background="#0F0F1A"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:background="#16213E">
+
+        <EditText
+            android:id="@+id/etBusqueda"
+            android:layout_width="0dp"
+            android:layout_height="44dp"
+            android:layout_weight="1"
+            android:hint="Buscar videos de YouTube..."
+            android:textColor="#FFFFFF"
+            android:textColorHint="#666666"
+            android:background="#0F3460"
+            android:paddingHorizontal="12dp"
+            android:imeOptions="actionSearch"
+            android:inputType="text"
+            android:textSize="14sp"
+            android:layout_marginEnd="8dp"/>
+
+        <Button
+            android:id="@+id/btnBuscar"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:text="Go"
+            android:textSize="12sp"
+            android:backgroundTint="#4ECDC4"
+            android:textColor="#1A1A2E"/>
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:indeterminate="true"
+        android:progressTint="#4ECDC4"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/tvEstadoDescarga"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="11sp"
+        android:textColor="#FFD700"
+        android:padding="8dp"
+        android:gravity="center"
+        android:background="#0F0F1A"
+        android:visibility="gone"/>
+
+    <LinearLayout
+        android:id="@+id/layoutReproductor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#000000"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/tvTituloActual"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="#FFFFFF"
+            android:textSize="13sp"
+            android:padding="12dp"
+            android:gravity="center"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:background="#16213E"/>
+
+        <SeekBar
+            android:id="@+id/seekBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="12dp"
+            android:progressTint="#4ECDC4"
+            android:thumbTint="#4ECDC4"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:padding="10dp">
+
+            <Button
+                android:id="@+id/btnRetroceder"
+                android:layout_width="wrap_content"
+                android:layout_height="44dp"
+                android:text="-10s"
+                android:textSize="12sp"
+                android:backgroundTint="#16213E"
+                android:textColor="#CCCCCC"
+                android:layout_marginEnd="12dp"/>
+
+            <Button
+                android:id="@+id/btnPlayPause"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:text="||"
+                android:textSize="18sp"
+                android:backgroundTint="#4ECDC4"
+                android:textColor="#1A1A2E"
+                android:layout_marginEnd="12dp"/>
+
+            <Button
+                android:id="@+id/btnAdelantar"
+                android:layout_width="wrap_content"
+                android:layout_height="44dp"
+                android:text="+10s"
+                android:textSize="12sp"
+                android:backgroundTint="#16213E"
+                android:textColor="#CCCCCC"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:gravity="center_vertical">
+
+            <CheckBox
+                android:id="@+id/cbModoPrivado"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Modo privado"
+                android:textColor="#CCCCCC"
+                android:textSize="12sp"
+                android:buttonTint="#4ECDC4"/>
+
+            <CheckBox
+                android:id="@+id/cbBajoConsumo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Bajo consumo"
+                android:textColor="#CCCCCC"
+                android:textSize="12sp"
+                android:buttonTint="#4ECDC4"/>
+
+            <Button
+                android:id="@+id/btnHistorial"
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:text="Historial"
+                android:textSize="11sp"
+                android:backgroundTint="#16213E"
+                android:textColor="#AAAAAA"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

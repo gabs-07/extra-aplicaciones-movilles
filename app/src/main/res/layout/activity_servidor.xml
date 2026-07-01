@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#1A1A2E">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="BlueTube — Servidor"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:padding="16dp"
+        android:background="#16213E"
+        android:layout_marginBottom="12dp"/>
+
+    <TextView
+        android:id="@+id/tvEstado"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Estado: Detenido"
+        android:textSize="13sp"
+        android:textColor="#CCCCCC"
+        android:padding="10dp"
+        android:background="#16213E"
+        android:layout_marginBottom="12dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="10dp">
+
+        <Button
+            android:id="@+id/btnVisible"
+            android:layout_width="0dp"
+            android:layout_height="44dp"
+            android:layout_weight="1"
+            android:text="Visible"
+            android:textSize="12sp"
+            android:backgroundTint="#16213E"
+            android:textColor="#4ECDC4"
+            android:layout_marginEnd="8dp"/>
+
+        <Button
+            android:id="@+id/btnIniciar"
+            android:layout_width="0dp"
+            android:layout_height="44dp"
+            android:layout_weight="1"
+            android:text="Iniciar Servidor"
+            android:textSize="12sp"
+            android:backgroundTint="#4ECDC4"
+            android:textColor="#1A1A2E"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="4dp">
+
+        <EditText
+            android:id="@+id/etBuscar"
+            android:layout_width="0dp"
+            android:layout_height="44dp"
+            android:layout_weight="1"
+            android:hint="Buscar video (tambien lo busca el cliente)..."
+            android:textColor="#FFFFFF"
+            android:textColorHint="#666666"
+            android:background="#0F3460"
+            android:paddingHorizontal="12dp"
+            android:imeOptions="actionSearch"
+            android:inputType="text"
+            android:textSize="13sp"
+            android:layout_marginEnd="8dp"/>
+
+        <Button
+            android:id="@+id/btnBuscar"
+            android:layout_width="60dp"
+            android:layout_height="44dp"
+            android:text="Go"
+            android:textSize="12sp"
+            android:backgroundTint="#4ECDC4"
+            android:textColor="#1A1A2E"/>
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:indeterminate="true"
+        android:progressTint="#4ECDC4"
+        android:visibility="gone"
+        android:layout_marginBottom="10dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="LOG DE ACTIVIDAD"
+        android:textSize="10sp"
+        android:textColor="#555555"
+        android:layout_marginBottom="6dp"/>
+
+    <ScrollView
+        android:id="@+id/scrollLog"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#0D1117"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/tvLog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Servidor listo.\n"
+            android:textSize="12sp"
+            android:textColor="#00FF41"
+            android:fontFamily="monospace"
+            android:lineSpacingMultiplier="1.4"/>
+    </ScrollView>
+
+</LinearLayout>
